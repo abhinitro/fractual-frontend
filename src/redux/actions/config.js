@@ -1,10 +1,10 @@
 const config = {
-    env:'local',
+    env:'dev',
     local:{
     'url':"http://localhost:4000/",
     },
     dev:{
-    'url':"http://localhost:4000/",
+    'url':"http://13.127.214.1:4000/",
       },
     }
 

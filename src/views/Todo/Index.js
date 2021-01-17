@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Badge, Card, CardBody, CardHeader, Col, Row,Button,Table  } from 'reactstrap';
+import {  Card, CardBody, CardHeader, Col, Row,Table  } from 'reactstrap';
 import { getTodoLists,updateTodo,deleteTodo } from './../../redux/actions'
 import { connect } from 'react-redux';
 
@@ -94,10 +94,10 @@ import { connect } from 'react-redux';
             <th scope="row">{item.id}</th>
             <td>{item.title}</td>
             <td>{item.date}</td>
-            <td>{item.state_id==0?"pending":"done" }</td>
+            <td>{item.state_id===0?"pending":"done" }</td>
             <td >
                 
-                 {item.state_id==0?(<button className="btn btn-info addtolist" onClick={() => this.changeStatus(item.id)}>Marked Done</button>):""}
+                 {item.state_id===0?(<button className="btn btn-info addtolist" onClick={() => this.changeStatus(item.id)}>Marked Done</button>):""}
                  <button className="btn btn-success addtolist" onClick={() => this.handleEdit(item.id)}>Edit</button>
                  <button className="btn btn-danger addtolist" onClick={() => this.handleDelete(item.id)}>Delete</button>
             </td>

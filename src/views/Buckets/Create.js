@@ -40,7 +40,7 @@ class Create extends Component {
     const {data}=this.props;
     let todos=data && typeof data !="undefined"?data.todos:[];
    
-    if(todos ==null || todos.length==0){
+    if(todos ==null){
 
      return (<div>NONE</div>)
     }
