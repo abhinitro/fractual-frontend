@@ -60,9 +60,16 @@ export default class RegisterForm extends React.Component {
           name="contact"
           label="Contact"
           type="text"
+          maxlength="10"
           validate={{
             required: true,
-           }}
+            pattern: {
+              value: '^[0-9]+$',
+              errorMessage:
+                "Please type digits only"
+            }
+           }
+          }
         />
         <AvField
           name="email"

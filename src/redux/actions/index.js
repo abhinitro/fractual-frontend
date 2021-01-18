@@ -109,7 +109,7 @@ export function updateTodo(formData) {
   return function (dispatch) {
 
     axios
-      .post(`todos/update/${formData.id}`, formData)
+      .post(`todos/update/${formData.id}`, formData,configs())
       .then(res => {
         toast.info('Todos is Successfully Update', {
           position: "top-right",
@@ -147,7 +147,7 @@ export function createTodo(formData) {
   return function (dispatch) {
 
     axios
-      .post(`todos/create`, formData)
+      .post(`todos/create`, formData,configs())
       .then(res => {
         toast.info('Todos is Successfully Created', {
           position: "top-right",
@@ -175,6 +175,8 @@ export function createTodo(formData) {
   }
 
 }
+
+
 
 
 export const getTodoLists = payloads => dispatch => axios.get(`todos/index`, configs())
@@ -235,7 +237,7 @@ export const getById = payloads => dispatch => axios.get(`todos/getById/${payloa
               return function (dispatch) {
             
                 axios
-                  .post(`buckets/create`, formData)
+                  .post(`buckets/create`, formData,configs())
                   .then(res => {
                     toast.info('Bucket is Successfully Created', {
                       position: "top-right",

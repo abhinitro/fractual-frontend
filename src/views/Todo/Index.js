@@ -77,7 +77,7 @@ import { connect } from 'react-redux';
                 <button className="btn btn-success pull-right" onClick={() => this.moveToCreate()}>Create</button>
               </CardHeader>
               <CardBody>
-              <Table>
+              <Table className="table-responsive">
       <thead>
         <tr>
           <th>Id</th>
@@ -95,7 +95,7 @@ import { connect } from 'react-redux';
             <td>{item.title}</td>
             <td>{item.date}</td>
             <td>{item.state_id===0?"pending":"done" }</td>
-            <td >
+            <td  className="btn-collection">
                 
                  {item.state_id===0?(<button className="btn btn-info addtolist" onClick={() => this.changeStatus(item.id)}>Marked Done</button>):""}
                  <button className="btn btn-success addtolist" onClick={() => this.handleEdit(item.id)}>Edit</button>
